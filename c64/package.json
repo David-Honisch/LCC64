@@ -1,0 +1,61 @@
+{
+  "name": "LC2C64",
+  "ProductName": {
+    "name": "LC2C64",
+    "version": "1.8.4"
+  },
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "author": "",
+  "scripts": {
+    "start": "electron .",
+    "rebuild": "electron-rebuild -f -w sqlite3",
+    "postinstall": "install-app-deps",
+    "package-mac": "electron-packager . LC2C64 --overwrite --platform=darwin --arch=x64 --icon=./favicon.ico.icns --prune=true --out=release-builds",
+    "package-win": "electron-packager . LC2C64 --overwrite --asar=true --platform=win32 --arch=ia32 --icon=./favicon.ico --prune=true --out=release-builds --version-string.CompanyName=CE --version-string.FileDescription=CE --version-string.ProductName=\"LC2C64\"",
+    "package-linux": "electron-packager . LC2C64 --overwrite --asar=true --platform=linux --arch=x64 --icon=./32x32.png --prune=true --out=release-builds"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "electron-builder": "^20.38.5",
+    "electron-rebuild": "^1.8.4"
+  },
+  "dependencies": {
+    "app": "^0.1.0",
+    "cordova-plugin-http": "^1.2.0",
+    "electron": "^4.0.5",
+    "electron-is-dev": "^1.0.1",
+    "electron-packager": "^13.1.0",
+    "util": "^0.11.1"
+  },
+  "build": {
+    "appId": "org.letztechance.LC2C64",
+    "copyright": "Copyright © 2018 ${David Honisch}",
+    "dmg": {
+      "contents": [
+        {
+          "x": 110,
+          "y": 150
+        },
+        {
+          "x": 240,
+          "y": 150,
+          "type": "link",
+          "path": "/Applications"
+        }
+      ]
+    },
+    "linux": {
+      "target": [
+        "AppImage",
+        "deb"
+      ]
+    },
+    "win": {
+      "title": "LC2C64",
+      "target": "NSIS",
+      "icon": "build/icon.ico"
+    }
+  }
+}
