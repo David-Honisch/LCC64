@@ -1,6 +1,3 @@
-
-
-
 function handleVirtualKey( value, down )
 {
 	Module.setKey(value, down);
@@ -419,7 +416,3 @@ var touchTimer = null;
 var joyTestSave = null;
 Module.setStatus('Downloading...');
 addHandler();
-
-
-
-
