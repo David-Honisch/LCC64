@@ -1,0 +1,5 @@
+lib,lib
+plugins,plugins
+config,config
+resources/app,resources/app
+resources/sql,resources/sql

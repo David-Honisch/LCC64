@@ -170,11 +170,13 @@ function process_touch(ev) {
 			document.getElementById("canvas_overlay_right").style.display = 'none';
 			document.getElementById("canvas_overlay_left").style.display = 'block';			
 		}
+		
 	}
 	if( touchEnabled > 0 ) {
 		window.clearTimeout(touchTimer);
 		touchTimer = window.setTimeout(function(){document.getElementById("canvas_overlay_right").style.display = 'none';document.getElementById("canvas_overlay_left").style.display = 'none';touchEnabled=0;}, 15000);		
 	}
+	
 }
 
 
@@ -416,3 +418,5 @@ var touchTimer = null;
 var joyTestSave = null;
 C64Module.setStatus('Downloading...');
 addHandler();
+console.log(JSON.stringify(C64Module));
+console.log(C64Module);
